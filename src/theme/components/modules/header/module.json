@@ -1,0 +1,6 @@
+{
+  "label": "header",
+  "module_id": "header",
+  "host_template_types": ["PAGE", "BLOG_POST", "BLOG_LISTING"],
+  "is_available_for_new_content": true
+}

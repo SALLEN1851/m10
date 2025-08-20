@@ -17,15 +17,15 @@
     <!-- Header Section -->
     <header class="bg-white shadow-sm">
       {% dnd_area "header" 
-        label="Header",
+        label="header",
         class="container mx-auto px-4 py-6"
       %}
         {% dnd_section %}
           {% dnd_column %}
             {% dnd_row %}
               {% dnd_module 
-                path="../components/modules/Header",
-                label="Header Module"
+                path="../components/modules/header",
+                label="header"
               %}
               {% end_dnd_module %}
             {% end_dnd_row %}
@@ -52,8 +52,8 @@
               {% dnd_module
                 path="@hubspot/rich_text",
                 label="Hero Content"
-                html='<div class="text-center">
-                  <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to Your Site</h1>
+                html='<div class="text-center text-gray-400">
+                  <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-400">Welcome to Your Site</h1>
                   <p class="text-xl md:text-2xl mb-8">Build amazing experiences with HubSpot CMS</p>
                   <a href="#" class="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">Get Started</a>
                 </div>'
