@@ -6,7 +6,6 @@ import {
 } from '@hubspot/cms-components/fields';
 import { RichText } from '@hubspot/cms-components';
 import logo from '../../../assets/sprocket.svg';
-import styles from '../../../styles/getting-started.module.css';
 import "../../../styles/tailwind.css"; 
 
 export function Component({ fieldValues, hublParameters }) {

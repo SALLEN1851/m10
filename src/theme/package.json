@@ -5,8 +5,8 @@
   "scripts": {
     "start": "hs-cms-dev-server .",
     "deploy": "hs project upload",
-    "build:css": "tailwindcss -i ./src/theme/styles/tailwind.css -o ./src/theme/assets/css/tailwind.css --minify",
-    "dev:css": "tailwindcss -i ./src/theme/styles/tailwind.css -o ./src/theme/assets/css/tailwind.css --watch",
+    "build:css": "tailwindcss -c ./tailwind.config.js -i ./styles/tailwind.css -o ./assets/css/tailwind.css --minify",
+    "dev:css": "tailwindcss -c ./tailwind.config.js -i ./styles/tailwind.css -o ./assets/css/tailwind.css --watch",
     "dev": "concurrently \"npm run watch:css\" \"npm run start\"",
     "build": "npm run build:css",
     "build:deploy": "npm run build:css && hs project upload"
@@ -16,12 +16,12 @@
   "dependencies": {
     "@hubspot/cms-components": "latest",
     "@tailwindcss/postcss": "^4.1.12",
-    "react": "^18"
-  },
-  "devDependencies": {
-    "@hubspot/cms-dev-server": "latest",
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",
+    "react": "^18",
     "tailwindcss": "^4.1.12"
+  },
+  "devDependencies": {
+    "@hubspot/cms-dev-server": "latest"
   }
 }

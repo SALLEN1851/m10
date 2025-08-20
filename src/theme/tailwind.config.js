@@ -1,14 +1,16 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+// src/theme/tailwind.config.js
+import { fileURLToPath } from 'url';
+
+const componentsDir = fileURLToPath(new URL('./components', import.meta.url));
+const templatesDir = fileURLToPath(new URL('./templates', import.meta.url));
+
+export default {
   content: [
-    "./src/**/*.{js,jsx,ts,tsx,html}", // Add specific extensions
-    "!./src/**/node_modules/**",       // Explicitly exclude node_modules
-    "./components/**/*.{ts,tsx,js,jsx}",
-    "./templates/**/*.{hubl,html}",
-    "./styles/**/*.{css}"
+    `${componentsDir}/**/*.{js,ts,jsx,tsx}`,
+    `${templatesDir}/**/*.{html,hubl}`
   ],
   theme: {
     extend: {},
   },
   plugins: [],
-}
+};
