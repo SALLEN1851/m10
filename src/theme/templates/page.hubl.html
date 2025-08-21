@@ -1,16 +1,21 @@
+
 <!--
-  templateType: page
+  templateType: "page"
   isAvailableForNewContent: true
-  label: Getting started with CMS React
 -->
 {% extends "./layouts/base.hubl.html" %}
 
 {% block body %}
-
-  {% module
-    "gettingStarted"
-    path="../components/modules/GettingStarted",
-    brandColors="{{ theme.brand_color }}",
-  %}
-
-{% endblock body %}
+  {% dnd_area "main" label="Main content" %}
+    {% dnd_section %}
+      {% dnd_column %}
+        {% dnd_row %}
+          {% dnd_module path="@hubspot/rich_text" %}
+            <h1 class="text-3xl font-bold">Hello from Home</h1>
+            <p class="mt-2 text-gray-700">This content sits between the header and footer.</p>
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+  {% end_dnd_area %}
+{% endblock %}

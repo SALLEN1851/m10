@@ -14,8 +14,8 @@
     "start": "cd src/theme && npm start",
     "prettier": "prettier . --check",
     "deploy": "hs project upload",
-    "build:css": "tailwindcss -i ./src/theme/styles/tailwind.css -o ./src/theme/assets/css/tailwind.css --minify",
-    "dev:css": "tailwindcss -i ./src/theme/styles/tailwind.css -o ./src/theme/assets/css/tailwind.css --watch",
+    "dev:css": "tailwindcss -c src/theme/tailwind.config.js -i src/theme/styles/tailwind.css -o src/theme/assets/css/tailwind.css --watch",
+    "build:css": "tailwindcss -c src/theme/tailwind.config.js -i src/theme/styles/tailwind.css -o src/theme/assets/css/tailwind.css --minify",
     "dev": "concurrently \"npm run watch:css\" \"hs watch --initial-upload\"",
     "build": "npm run build:css",
     "build:deploy": "npm run build:css && hs project upload"
