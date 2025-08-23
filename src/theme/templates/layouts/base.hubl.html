@@ -1,3 +1,4 @@
+{# templates/layouts/base.hubl.html #}
 <!--
   templateType: none
 -->
@@ -13,16 +14,22 @@
       <link rel="shortcut icon" href="{{ brand_settings.primaryFavicon.src }}" />
     {% endif %}
     <meta name="description" content="{{ page_meta.meta_description }}" />
-    {# To see a full list of what is included via standard_footer_includes please reference this article: https://developers.hubspot.com/docs/cms/hubl/variables#required-page-template-variables #}
-   {{ require_css(get_asset_url('@projects/metric-8-20/theme/assets/css/tailwind.css')) }}
+
+    
+   {{ require_css(get_asset_url('../../assets/css/tailwind.css')) }}
     {{ standard_header_includes }}
   </head>
   <body>
     <div class="body-wrapper {{ builtin_body_classes }}">
-      {% block body %}
-      {% endblock body %}
+      {# Include global header (partials live in components/partials) #}
+      {% include "../../components/partials/header.hubl.html" %}
+
+      {% block body %}{% endblock body %}
+
+      {# Include global footer #}
+      {% include "../../components/partials/footer.hubl.html" %}
     </div>
-    {# To see a full list of what is included via standard_footer_includes please reference this article: https://developers.hubspot.com/docs/cms/hubl/variables#required-page-template-variables #}
+
     {{ standard_footer_includes }}
   </body>
 </html>

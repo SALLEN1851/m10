@@ -6,7 +6,7 @@ const templatesDir = fileURLToPath(new URL('./templates', import.meta.url));
 
 export default {
   content: [
-    `${componentsDir}/**/*.{js,ts,jsx,tsx}`,
+    `${componentsDir}/**/*.{js,ts,jsx,tsx,html,hubl,hubl.html}`,
     `${templatesDir}/**/*.{html,hubl}`
   ],
   theme: {

@@ -1,16 +1,20 @@
 <!--
-  templateType: page
+  templateType: "page"
   isAvailableForNewContent: true
-  label: Getting started with CMS React
 -->
 {% extends "./layouts/base.hubl.html" %}
 
 {% block body %}
+  {% dnd_area "main" label="Main content" %}
+    {% dnd_section %}
+      {% dnd_column %}
+        {% dnd_row %}
+          {% dnd_module path="@hubspot/rich_text" %}
+        
+          {% end_dnd_module %}
+        {% end_dnd_row %}
+      {% end_dnd_column %}
+    {% end_dnd_section %}
+  {% end_dnd_area %}
 
-  {% module
-    "gettingStarted"
-    path="../components/modules/GettingStarted",
-    brandColors="{{ theme.brand_color }}",
-  %}
-
-{% endblock body %}
+{% endblock %}
